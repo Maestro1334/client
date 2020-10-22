@@ -7,7 +7,6 @@ interface ICompany
   id: number
   name: string
   address: string
-  vacancies: IVacancy[]
 }
 
 interface IVacancy
@@ -16,7 +15,7 @@ interface IVacancy
   title: string
   description: string
   createdAt: Date
-  company: number
+  companyFK: number
 }
 
 @Component({
