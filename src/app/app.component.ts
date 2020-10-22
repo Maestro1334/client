@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { ApiService } from 'src/app/services/api.service';
+
 
 interface ICompany
 {
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit {
 
 
   constructor (
-    private httpClient: HttpClient
+    private apiService: ApiService
   ) {}
 
   async ngOnInit() {
@@ -39,11 +40,11 @@ export class AppComponent implements OnInit {
   }
 
   async loadCompanies() {
-    this.companies = await this.httpClient.get<ICompany[]>('/api/companies').toPromise()
+    this.companies = await this.apiService.getAllCompanies().toPromise()
   }
 
   async loadVacancies() {
-    this.vacancies = await this.httpClient.get<IVacancy[]>('/api/vacancies').toPromise()
+    this.vacancies = await this.apiService.getAllVacancies().toPromise()
   }
 
 

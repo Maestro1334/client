@@ -1,20 +1,3 @@
-<div>
-  <div>
-    <div>Company</div>
-    <input [(ngModel)]="name" type="text" placeholder="Enter company name">
-  </div>
-  <div>
-    <div>Address</div>
-    <input [(ngModel)]="address" type="text" placeholder="Enter company address">
-  </div>
-  <br>
-  <button (click)="addPost()">Add Company</button>
-</div>
-
-<br>
-<br>
-<br>
-
 <div *ngFor="let company of companies">
   <div>
     <div>{{ company.name }}</div>
