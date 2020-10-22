@@ -7,6 +7,7 @@ interface ICompany
   id: number
   name: string
   address: string
+  vacancies: IVacancy[]
 }
 
 interface IVacancy
@@ -47,15 +48,7 @@ export class AppComponent implements OnInit {
     this.vacancies = await this.apiService.getAllVacancies().toPromise()
   }
 
-
-  // async addPost()
-  // {
-  //   await this.httpClient.post('/api/companies', {
-  //     name: this.companyName,
-  //     address: this.companyAddress
-  //   }).toPromise()
-  //   await this.loadCompanies()
-  //   this.companyName = ""
-  //   this.companyAddress = ""
-  // }
+  async loadVacanciesForCompany(id: number) {
+    this.vacancies = await this.apiService.getVacanciesByCompanyId(id).toPromise();
+  }
 }

@@ -1,7 +1,13 @@
+<div class="list row">
+  <div class="col-md-8">
+    
+    <div></div>
+  </div>
+</div>
 <div *ngFor="let company of companies">
-  <div>
-    <div>{{ company.name }}</div>
-    <div>{{ company.address }}</div>
+  <div >
+    <h2>Company: {{ company.name }}</h2>
+    <h3>Adress: {{ company.address }}</h3>
   </div>
   <div *ngFor="let vacancy of vacancies">
     <div>
